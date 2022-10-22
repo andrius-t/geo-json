@@ -22,20 +22,18 @@ export function Map() {
   }, [id, map]);
 
   return (
-    <div className="rounded-lg overflow-y-auto">
-      <MapContainer
-        ref={handleSetMap}
-        center={[40.776787, -73.968467]}
-        zoom={14}
-        className="w-full aspect-square rounded-lg"
-        scrollWheelZoom
-      >
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-        />
-        <EditControl />
-      </MapContainer>
-    </div>
+    <MapContainer
+      ref={handleSetMap}
+      center={[40.776787, -73.968467]}
+      zoom={14}
+      className="w-full h-full rounded-lg"
+      scrollWheelZoom
+    >
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+      />
+      <EditControl />
+    </MapContainer>
   );
 }

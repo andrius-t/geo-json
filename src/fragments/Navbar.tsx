@@ -42,7 +42,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="mx-auto w-full py-2 flex items-center justify-between shadow px-5 gap-2 flex-col md:flex-row">
+    <div className="bg-white mx-auto w-full py-2 flex items-center justify-between shadow px-5 gap-2 flex-col md:flex-row">
       <div className="flex items-center">
         <input ref={inputFileRef} accept=".geojson" className="hidden" type="file" name="file" onChange={handleFileChange} />
         <div>

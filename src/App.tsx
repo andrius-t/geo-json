@@ -1,7 +1,6 @@
-import React from 'react';
-import { Map } from '@/fragments/Map';
-import { Features } from '@/fragments/Features';
-import { Navbar } from '@/fragments/Navbar';
+import { Map } from './fragments/Map';
+import { Features } from './fragments/Features';
+import { Navbar } from './fragments/Navbar';
 
 function App() {
   return (

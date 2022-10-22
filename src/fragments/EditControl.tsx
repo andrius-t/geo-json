@@ -20,7 +20,6 @@ export default function EditControl() {
           layer instanceof Polygon ||
           layer instanceof Marker
         ) {
-          console.log(layer.feature);
           if (layer?.feature?.properties.radius && ref.current) {
             new Circle(layer.feature.geometry.coordinates.slice().reverse(), {
               radius: layer.feature?.properties.radius

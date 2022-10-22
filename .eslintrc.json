@@ -1,0 +1,43 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "unused-imports",
+    "react"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
+    "react-hooks/exhaustive-deps": 0,
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ]
+  }
+}

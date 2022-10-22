@@ -1,6 +1,7 @@
-import { Button } from "../components/Button";
+import { Button } from "@/components/Button";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { ChangeEvent, useRef } from "react";
+import { useDataStore } from "@/store/useDataStore";
 
 export function Navbar() {
   const inputFileRef = useRef<HTMLInputElement>(null);
@@ -17,7 +18,7 @@ export function Navbar() {
         return;
       };
       var obj = JSON.parse(result);
-      console.log(obj);
+      useDataStore.setState({ data: obj });
     };
     reader.readAsText(file);
   };

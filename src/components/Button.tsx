@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from '../helpers/classnames';
+import { classnames } from '@/helpers/classnames';
 
 export function Button({ className = "", ...props } : React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>) {
   return (

@@ -1,6 +1,6 @@
 import { geoJSON } from "leaflet";
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import data from "../data/sample.json";
+import data from "@/data/sample.json";
 
 // @ts-ignore
 const bounds = geoJSON(data).getBounds();

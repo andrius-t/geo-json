@@ -41,10 +41,18 @@ export function Navbar() {
     downloadLink.click();
   };
 
+  const handleResetInput = () => {
+    const inputElement = inputFileRef.current;
+    if (!inputElement) {
+      return;
+    }
+    inputElement.value = "";
+  };
+
   return (
     <div className="bg-white mx-auto w-full py-2 flex items-center justify-between shadow px-5 gap-2 flex-col md:flex-row">
       <div className="flex items-center">
-        <input ref={inputFileRef} accept=".geojson" className="hidden" type="file" name="file" onChange={handleFileChange} />
+        <input ref={inputFileRef} accept=".geojson" className="hidden" type="file" name="file" onClick={handleResetInput} onChange={handleFileChange} />
         <div>
           <Button
             onClick={handleAddFile}

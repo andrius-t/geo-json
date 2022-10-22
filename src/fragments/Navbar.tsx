@@ -53,9 +53,11 @@ export function Navbar() {
           Load geoJSON
           </Button>
         </div>
-        <span className="m-3">
-          Loaded file: <b>{fileName}</b>
-        </span>
+        { fileName && (
+          <span className="m-3">
+            Loaded file: <b>{fileName}</b>
+          </span>
+        )}
       </div>
       <div className="flex">
         {data && (

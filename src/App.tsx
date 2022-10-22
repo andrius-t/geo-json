@@ -3,7 +3,7 @@ import { Map } from './components/Map';
 
 function App() {
   return (
-    <div className="flex w-[500px] h-[500px] rounded-xl overflow-hidden m-5">
+    <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden gap-5 p-5">
         <Map />
     </div>
   );

@@ -7,7 +7,7 @@ const bounds = geoJSON(data).getBounds();
 export function Map() {
     console.log(data);
     return (
-      <MapContainer bounds={bounds} className="w-[500px] h-[500px]" zoom={13} scrollWheelZoom>
+      <MapContainer bounds={bounds} className="w-full aspect-square" zoom={13} scrollWheelZoom>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

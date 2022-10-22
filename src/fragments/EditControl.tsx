@@ -48,7 +48,7 @@ export default function EditControl() {
         onDeleted={handleChange}
         draw={{
           rectangle: true,
-          circle: true,
+          circle: false,
           polyline: true,
           polygon: true,
           marker: true,

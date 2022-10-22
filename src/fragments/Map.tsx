@@ -1,20 +1,14 @@
-import { LatLngTuple, Map as LeafletMap } from "leaflet";
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import { useDataStore } from "../store/useDataStore";
 import { useEffect } from "react";
-import { handleGoToBounds } from "../helpers/leafletHelpers";
-
-const center: LatLngTuple = [51.505, -0.09];
+import { Map as LeafletMap } from "leaflet";
+import { MapContainer, TileLayer } from 'react-leaflet';
+import EditControl from './EditControl';
+import { useDataStore } from '../store/useDataStore';
+import { handleGoToBounds } from '../helpers/leafletHelpers';
 
 export function Map() {
-  const data = useDataStore((state) => state.data);
   const setMap = useDataStore((state) => state.setMap);
   const map = useDataStore((state) => state.map);
   const id = useDataStore((state) => state.id);
-
-  useEffect(() => {
-    handleGoToBounds();
-  }, [data, map]);
 
   const handleSetMap = (map: LeafletMap | null | undefined) => {
     if (!map) {
@@ -23,20 +17,24 @@ export function Map() {
     setMap(map);
   };
 
+  useEffect(() => {
+    handleGoToBounds();
+  }, [id, map]);
+
   return (
-    <div className="rounded-lg overflow-hidden">
+    <div className="rounded-lg overflow-y-auto">
       <MapContainer
-        center={center}
         ref={handleSetMap}
+        center={[40.776787, -73.968467]}
+        zoom={14}
         className="w-full aspect-square rounded-lg"
-        zoom={13}
         scrollWheelZoom
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
-        { data && <GeoJSON key={id} data={data} /> }x
+        <EditControl />
       </MapContainer>
     </div>
   );

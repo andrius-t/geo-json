@@ -8,3 +8,11 @@ export function handleGoToBounds() {
   }
   map.fitBounds(geoJSON(data).getBounds());
 };
+
+export function handleGoToBoundsWithData(data: any) {
+  const { map } = useDataStore.getState();
+  if (! map || !data) {
+    return;
+  }
+  map.fitBounds(geoJSON(data).getBounds());
+};

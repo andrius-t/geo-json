@@ -10,6 +10,7 @@ export function Map() {
   const data = useDataStore((state) => state.data);
   const setMap = useDataStore((state) => state.setMap);
   const map = useDataStore((state) => state.map);
+  const id = useDataStore((state) => state.id);
 
   useEffect(() => {
     if (!data) {
@@ -54,7 +55,7 @@ export function Map() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          { data && <GeoJSON data={data} /> }x
+          { data && <GeoJSON key={id} data={data} /> }x
         </MapContainer>
       </div>
     </div>

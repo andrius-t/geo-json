@@ -1,9 +1,12 @@
+import { GeoJsonObject } from 'geojson';
 import { Map } from 'leaflet';
 import create from 'zustand';
 import { persist } from 'zustand/middleware';
 
 interface AuthState {
-  data: any,
+  id?: string;
+  fileName?: string;
+  data?: GeoJsonObject,
   map?: Map
   setMap: (map: Map) => void
 }
@@ -11,12 +14,11 @@ interface AuthState {
 export const useDataStore = create<AuthState>()(
   persist(
     (set) => ({
-      data: null,
       setMap: (map: Map) => set({ map })
     }),
     {
       name: 'data-storage',
-      partialize: (state) => ({ data: state.data })
+      partialize: (state) => ({ data: state.data, id: state.id, fileName: state.fileName })
     }
   )
 );
